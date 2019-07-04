@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7553C7A022CDD0770058239B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553C79F22CDD0770058239B /* AppDelegate.swift */; };
-		7553C7A522CDD0770058239B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7553C7A322CDD0770058239B /* Main.storyboard */; };
 		7553C7A722CDD0780058239B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7553C7A622CDD0780058239B /* Assets.xcassets */; };
-		7553C7AA22CDD0780058239B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7553C7A822CDD0780058239B /* LaunchScreen.storyboard */; };
 		7553C7B322CDD0CB0058239B /* QXLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553C7B222CDD0CB0058239B /* QXLabel.swift */; };
 		7553C7B522CDD2170058239B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553C7B422CDD2170058239B /* ViewController.swift */; };
 		7EC4631DB6E26B126A58DD9E /* Pods_QXTextView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2376023A8C9AFE5416758E25 /* Pods_QXTextView.framework */; };
@@ -20,9 +18,7 @@
 		2376023A8C9AFE5416758E25 /* Pods_QXTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QXTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7553C79C22CDD0770058239B /* QXTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QXTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7553C79F22CDD0770058239B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7553C7A422CDD0770058239B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7553C7A622CDD0780058239B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7553C7A922CDD0780058239B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7553C7AB22CDD0780058239B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7553C7B222CDD0CB0058239B /* QXLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QXLabel.swift; sourceTree = "<group>"; };
 		7553C7B422CDD2170058239B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +70,7 @@
 				7553C79F22CDD0770058239B /* AppDelegate.swift */,
 				7553C7B422CDD2170058239B /* ViewController.swift */,
 				7553C7B122CDD0AE0058239B /* QXTextView */,
-				7553C7A322CDD0770058239B /* Main.storyboard */,
 				7553C7A622CDD0780058239B /* Assets.xcassets */,
-				7553C7A822CDD0780058239B /* LaunchScreen.storyboard */,
 				7553C7AB22CDD0780058239B /* Info.plist */,
 			);
 			path = QXTextView;
@@ -159,9 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7553C7AA22CDD0780058239B /* LaunchScreen.storyboard in Resources */,
 				7553C7A722CDD0780058239B /* Assets.xcassets in Resources */,
-				7553C7A522CDD0770058239B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,25 +213,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7553C7A322CDD0770058239B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7553C7A422CDD0770058239B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7553C7A822CDD0780058239B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7553C7A922CDD0780058239B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7553C7AC22CDD0780058239B /* Debug */ = {
@@ -366,13 +339,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4S3D2DBDGU;
 				INFOPLIST_FILE = QXTextView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.labi3285.QXTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -385,13 +359,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4S3D2DBDGU;
 				INFOPLIST_FILE = QXTextView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.labi3285.QXTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

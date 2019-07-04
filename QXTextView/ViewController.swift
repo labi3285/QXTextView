@@ -90,8 +90,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = QXColor.hex("#ffffff", 1).uiColor
         view.addSubview(label)
-        let size = label.sizeForWidth(350)
-        label.frame = CGRect(x: 10, y: 70, width: 350, height: 400)
+//        let size = label.sizeForWidth(300)
+        label.frame = CGRect(x: 10, y: 70, width: 300, height: 400)
     }
     
     deinit {
