@@ -1,16 +1,20 @@
 PODS:
+  - QXConsMaker (0.0.6)
   - QXUIKitExtension (0.0.5)
 
 DEPENDENCIES:
+  - QXConsMaker (~> 0.0.6)
   - QXUIKitExtension
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - QXConsMaker
     - QXUIKitExtension
 
 SPEC CHECKSUMS:
+  QXConsMaker: e3e12b9117e286d1923cda5d4fad8adb8f4ad5f3
   QXUIKitExtension: f84f1e5bf56056533f02a8f596fc8aca58364d7f
 
-PODFILE CHECKSUM: 4028de4bb3269ab5ae90765e943d165d89343a59
+PODFILE CHECKSUM: b6235c03ca4c5b937797bab95e28bf86cd4a159c
 
 COCOAPODS: 1.7.2

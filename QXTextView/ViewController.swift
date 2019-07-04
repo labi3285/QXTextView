@@ -8,6 +8,7 @@
 
 import UIKit
 import QXUIKitExtension
+import QXConsMaker
 
 class Button: UIButton {
     deinit {
@@ -39,41 +40,36 @@ class ViewController: UIViewController {
         print("btn clicked")
     }
     
-    lazy var btn: Button = {
-        let one = newButton("xxx")
-        return one
-    }()
-    
     lazy var label: QXLabel = {
         let one = QXLabel()
-        one.numberOfLines = 0
-        one.lineSpace = 10
-        one.paragraphSpace = 15
-        one.alignmentX = .center
+        one.lineSpace = 0
+        one.paragraphSpace = 0
+        one.alignmentX = .left
         one.alignmentY = .top
         one.justified = true
-        //one.edgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        one.numberOfLines = 7
+        one.edgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         one.backgroundColor = QXColor.hex("#f5f5f5", 1).uiColor
-//        one.lineHeightTolerance = 1.1
+        //one.lineHeightTolerance = 1.1
+        one.intrinsicWidth = 300
         
-        let t1 = QXLabel.Item.text(string: "鲁镇的酒店的格局，是和别处不同的：都是当街一个曲尺形的大柜台，柜里面预备着热水，可以随时温酒。",
+        let t1 = QXLabel.Item.text(string: "鲁镇的酒店的格局，是和别处不同的",
                                    font: QXFont(size: 16, color: QXColor.hex("#333333", 1)),
                                    linkData: "t1")
-        let t2 = QXLabel.Item.text(string: "做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。",
+        let t2 = QXLabel.Item.text(string: "做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；",
                                    font: QXFont(size: 16, color: QXColor.hex("#666666", 1)),
                                    linkData: "t2")
-        let t3 = QXLabel.Item.text(string: "只有穿长衫的，才踱进店面隔壁的房子里，要酒要菜，慢慢地坐喝。但这些顾客，多是短衣帮，大抵没有这样阔绰。做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。做工的人，傍午傍晚散了工，每每花四文铜钱，买一碗酒，这是二十多年前的事，现在每碗涨到十文，靠柜外站着，热热的喝了休息；倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。",
+        let t3 = QXLabel.Item.text(string: "倘肯多花一文，便可以买一碟盐煮笋，或者茴香豆，做下酒物了，如果出到十几文，那就能买一样荤菜，但这些顾客，多是短衣帮，大抵没有这样阔绰。",
                                    font: QXFont(size: 16, color: QXColor.hex("#999999", 1)),
                                    linkData: "t3")
         
-        let img1 = QXLabel.Item.image(image: QXImage("head_question"),
+        let img1 = QXLabel.Item.image(image: QXImage("pic"),
                                       size: CGSize(width: 30, height: 30),
                                       widthPadding: 5,
                                       descentRatio: 0.2,
                                       linkData: "img1")
         
-        
-        let btn1 = QXLabel.Item.view(view: btn, size: CGSize(width: 60, height: 30), widthPadding: 5, descentRatio: 0.2, linkData: nil)
+        let btn1 = QXLabel.Item.view(view: newButton("按钮"), size: CGSize(width: 60, height: 30), widthPadding: 5, descentRatio: 0.2, linkData: nil)
 
         var moreFont = QXFont(size: 16, color: QXColor.hex("#0000ff", 1))
         moreFont.underline = true
@@ -88,10 +84,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = QXColor.hex("#ffffff", 1).uiColor
         view.addSubview(label)
-//        let size = label.sizeForWidth(300)
-        label.frame = CGRect(x: 10, y: 70, width: 300, height: 400)
+        label.IN(view).CENTER.MAKE()
     }
     
     deinit {

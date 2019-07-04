@@ -62,6 +62,7 @@ public class QXLabel: UIView {
             }
             setNeedsLayout()
             setNeedsDisplay()
+            invalidateIntrinsicContentSize()
         }
     }
     
@@ -110,14 +111,16 @@ public class QXLabel: UIView {
     /// line height tolerance, nil for auto. Normaly when asc and none-asc mix in one line will result in a change of line height. this property will prevent from doing this by fix line height by lineHeightTolerance * font-size. [warning] you must be sure to have attaches NO BIGGER than this when set to yes. 1.1 is currently the fit value for charactors
     public var lineHeightTolerance: CGFloat? = 1.1
     
-    /// calculate size for width, nil width
+    /// calculate size for width, nil width for no limit
     public func sizeForWidth(_ width: CGFloat?) -> CGSize {
         return _getAttibuttedStringIntrinsicSize(_getContent(items).attributtedString, width)
     }
     
+    /// intrinsic width for auto-layout
+    public var intrinsicWidth: CGFloat?
     /// the auto calculate size
     public override var intrinsicContentSize: CGSize {
-        return _getAttibuttedStringIntrinsicSize(_attributtedString, nil)
+        return _getAttibuttedStringIntrinsicSize(_getContent(items).attributtedString, intrinsicWidth)
     }
     
     public override func sizeToFit() {
@@ -428,6 +431,7 @@ extension QXLabel {
         let mAttri =  attributtedString.attributedSubstring(from: NSRange(location: range.location, length: range.length)).mutableCopy() as! NSMutableAttributedString
         let attriToken = NSAttributedString(string: "\u{2026}", attributes: dic)
         mAttri.append(attriToken)
+        mAttri.append(attriToken)
         let link: Link?
         let _attriToken: NSAttributedString
         if let item = lineBreakItem {
@@ -529,6 +533,9 @@ extension QXLabel {
                 let runs = _getRuns(_ctLine, frame, origin, truncLineOffset)
                 let range = NSRange(location: ctRange.location, length: ctRange.length)
                 let line = Line(ctLine: _ctLine, range: range, frame: frame, origin: origin, runs: runs)
+                
+                print(frame)
+
                 lines.append(line)
             } else {
                 break
@@ -634,7 +641,12 @@ extension QXLabel {
         } else {
             attri = attributtedString
         }
-        return attri.boundingRect(with: limitSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil).size
+        if showLines == 1 {
+            let size = attri.boundingRect(with: limitSize, options: .usesLineFragmentOrigin, context: nil).size
+            return CGSize(width: size.width, height: size.height - lineSpace)
+        } else {
+            return attri.boundingRect(with: limitSize, options: .usesLineFragmentOrigin, context: nil).size
+        }
     }
     
 }
