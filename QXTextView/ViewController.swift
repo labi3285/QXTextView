@@ -93,9 +93,9 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        let vc = ViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        print("touch view")
+//        let vc = ViewController()
+//        navigationController?.pushViewController(vc, animated: true)
         
     }
     
