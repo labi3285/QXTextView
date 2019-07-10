@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.name         = "QXTextView"
-s.version      = "0.0.3"
+s.version      = "0.0.4"
 s.summary      = "An attributted label view in swift."
 s.description  = <<-DESC
 support text image custom-view lineBreakItem underline link etc.
